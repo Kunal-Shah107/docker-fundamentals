@@ -38,3 +38,6 @@ docker push therawknight/mynginx_custom_image:latest
 ## Step-5: Verify the same on docker hub
 - Login to docker hub and verify the image we have pushed
 - Url: https://hub.docker.com/repositories
+
+## Step-6: Run the latest image container
+docker run -p 8080:80 therawknight/mynginx_custom_image:latest

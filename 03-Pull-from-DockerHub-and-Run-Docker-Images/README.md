@@ -69,3 +69,6 @@ docker images
 docker rmi  <image-id>
 ```
 
+## Docker Stats
+docker stats <container-id>
+

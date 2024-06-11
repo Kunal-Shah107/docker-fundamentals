@@ -1,6 +1,5 @@
 # Docker Fundamentals
 
-## What is covered as part of Docker Fundamentals?
 1. Docker Introduction
 2. Docker Installation
 3. Pull from Docker Hub and Run Docker Image locally.

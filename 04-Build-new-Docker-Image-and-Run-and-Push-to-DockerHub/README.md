@@ -3,7 +3,6 @@
 ## Pre-requisite Step
 - Create your Docker hub account. 
 - https://hub.docker.com/
-- **Important Note**: In the below listed commands wherever you see **stacksimplify** you can replace with your docker hub account id. 
 
 
 ## Step-1: Run the base Nginx container

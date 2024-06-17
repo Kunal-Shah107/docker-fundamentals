@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jenkins Fundamentals - Custom Image</title>
+    <title>Jenkins Fundamentals - Custom Deployments</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #B0E57C;
+            background-color: #B0E57C; /* Light green background */
             color: #fff;
             display: flex;
             justify-content: center;
@@ -28,7 +28,7 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: #FFD700;
+            color: #FFD700; /* Gold color */
         }
         p {
             font-size: 1.2em;
@@ -39,46 +39,35 @@
             color: #FFD700;
             margin-top: 20px;
         }
-        .btn {
-            background-color: #5151E5;
-            border: none;
-            color: white;
-            padding: 15px 32px;
+        .links-container {
+            margin-top: 30px;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-            border-radius: 5px;
         }
-        .btn:hover {
+        .links-container a {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition-duration: 0.4s;
+        }
+        .links-container a:hover {
             background-color: #72EDF2;
             color: #5151E5;
-        }
-        .img-container {
-            margin-top: 30px;
-        }
-        .img-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Jenkins Fundamentals - Custom Image</h1>
+        <h1>Jenkins CI/CD Fundamentals - Custom Deployments</h1>
         <p>Congrats! You have successfully completed the lab exercise.</p>
-        <div class="img-container">
+        <div class="links-container">
             <a href="https://www.jenkins.io/doc/" target="_blank">Jenkins Official Documentation</a>
             <a href="https://docs.github.com/en" target="_blank">GitHub Official Documentation</a>
             <a href="https://docs.docker.com/" target="_blank">Docker Official Documentation</a>
         </div>
-        <p class="footer">Kunal Shah - acloudguy</p>
+        <p class="footer">Kunal Shah - acloudguy | <a href="https://www.linkedin.com/in/kunal-shah07/" target="_blank" style="color: #FFD700; text-decoration: underline;">Lets connect on Linkedin</a></p>
     </div>
 </body>
 </html>

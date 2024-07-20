@@ -17,7 +17,7 @@ docker pull nginx:latest
 docker run --name app1 -p 80:8080 -d nginx:latest
 http://localhost/
 
-
+```
 ## Step-4: List Running Containers
 ```
 docker ps

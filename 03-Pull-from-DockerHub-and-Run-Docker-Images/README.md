@@ -12,32 +12,11 @@ docker pull nginx:latest
 ```
 
 ## Step-3: Run the downloaded Docker Image & Access the Application
-- Copy the docker image name from Docker Hub
+
 ```
 docker run --name app1 -p 80:8080 -d nginx:latest
-http://localhost/hello
+http://localhost/
 
-# For Mac with Apple Chips (use different application)
-Step-1: Install Docker with Apple Chips binary (https://docs.docker.com/desktop/mac/install/) on your mac machine
-
-Step-2: Run the simple Nginx Application container. 
-docker run --name kube1 -p 80:80 --platform linux/amd64 -d nginx:latest
-http://localhost
-
-## Sample Output
-docker run --name kube1 -p 80:80 --platform linux/amd64 -d nginx:latest
-370f238d97556813a4978572d24983d6aaf80d4300828a57f27cda3d3d8f0fec
-curl http://localhost
-<!DOCTYPE html>
-<html>
-   <body style="background-color:lightgoldenrodyellow;">
-      <h1>Welcome</h1>
-      <p>Kubernetes Fundamentals Demo</p>
-      <p>Application Version: V1</p>
-   </body>
-</html>%
-
-```
 
 ## Step-4: List Running Containers
 ```

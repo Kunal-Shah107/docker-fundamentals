@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    stages { 
+        stage('SCM Checkout') {
+            steps {
+                retry(3) {
+                    git branch: 'main', url: 'https://github.com/Kunal-Shah107/docker-fundamentals.git'
+                }
+            }
+        }
+        stage('Pull Docker Image') {
+            steps {
+                dir('04-Build-new-Docker-Image-and-Run-and-Push-to-DockerHub/Nginx-DockerFiles') {
+                    sh 'echo ${pwd}'
+                    sh 'docker version'
+                    withCredentials([usernamePassword(credentialsId: 'test-dockerhub-password', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                        sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                    }
+                }
+            }
+        }
+        stage('Build Docker Image') {
+            steps {  
+                dir('04-Build-new-Docker-Image-and-Run-and-Push-to-DockerHub/Nginx-DockerFiles') {
+                    sh 'docker build -t mydefaultnginxnew:latest .'
+                    sh 'docker images'
+                }
+            }
+        }
+        stage('Push Image') {
+            steps {
+                script {
+                    def imageTag = "therawknight/mydefaultnginxnew:${BUILD_NUMBER}"
+                    sh "docker tag mydefaultnginxnew:latest ${imageTag}"
+                    sh "docker push ${imageTag}"
+                }
+            }
+        }
+        stage('Run Docker Image') {
+            steps {  
+                    sh 'docker run --name mydefaultnginxnew -p 80:80 -d mydefaultnginxnew:latest'
+                    sh 'docker ps'
+            }
+        }
+    }
+}
